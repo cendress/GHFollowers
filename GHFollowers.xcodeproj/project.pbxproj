@@ -16,6 +16,7 @@
 		9D0AE4662ACEF0FE00A31A9D /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AE4652ACEF0FE00A31A9D /* FavoritesListViewController.swift */; };
 		9D0AE4682AD0905400A31A9D /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AE4672AD0905400A31A9D /* GFButton.swift */; };
 		9D0AE46A2AD093AF00A31A9D /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AE4692AD093AF00A31A9D /* GFTextField.swift */; };
+		9D0AE46C2AD2083300A31A9D /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0AE46B2AD2083300A31A9D /* FollowerListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9D0AE4652ACEF0FE00A31A9D /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 		9D0AE4672AD0905400A31A9D /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
 		9D0AE4692AD093AF00A31A9D /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
+		9D0AE46B2AD2083300A31A9D /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				9D0AE4672AD0905400A31A9D /* GFButton.swift */,
 				9D0AE4692AD093AF00A31A9D /* GFTextField.swift */,
 				9D0AE4632ACEF0C700A31A9D /* SearchViewController.swift */,
+				9D0AE46B2AD2083300A31A9D /* FollowerListViewController.swift */,
 				9D0AE4652ACEF0FE00A31A9D /* FavoritesListViewController.swift */,
 				9D0AE4532ACDE22000A31A9D /* ViewController.swift */,
 				9D0AE4582ACDE22200A31A9D /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D0AE46C2AD2083300A31A9D /* FollowerListViewController.swift in Sources */,
 				9D0AE4542ACDE22000A31A9D /* ViewController.swift in Sources */,
 				9D0AE4662ACEF0FE00A31A9D /* FavoritesListViewController.swift in Sources */,
 				9D0AE4682AD0905400A31A9D /* GFButton.swift in Sources */,
