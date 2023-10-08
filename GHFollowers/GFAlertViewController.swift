@@ -36,6 +36,7 @@ class GFAlertViewController: UIViewController {
     view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
     configureContainerView()
     configureTitleLabel()
+    configureActionButton()
   }
   
   
@@ -67,4 +68,20 @@ class GFAlertViewController: UIViewController {
     ])
   }
   
+  func configureActionButton() {
+    containerView.addSubview(actionButton)
+    actionButton.setTitle(buttonTitle ?? "OK", for: .normal)
+    actionButton.addTarget(self, action: #selector(dismissViewController), for: .touchUpInside)
+    
+    NSLayoutConstraint.activate([
+      actionButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -padding),
+      actionButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: padding),
+      actionButton.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -padding),
+      actionButton.heightAnchor.constraint(equalToConstant: 44)
+    ])
+  }
+  
+  @objc func dismissViewController() {
+    dismiss(animated: true)
+  }
 }
