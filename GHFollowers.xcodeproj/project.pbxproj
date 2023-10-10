@@ -24,6 +24,7 @@
 		9DB966CF2AD3002E0067F269 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966CE2AD3002E0067F269 /* Follower.swift */; };
 		9DB966D12AD301850067F269 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966D02AD301850067F269 /* User.swift */; };
 		9DB966D62AD57B0B0067F269 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966D52AD57B0B0067F269 /* NetworkManager.swift */; };
+		9DB966D92AD585850067F269 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966D82AD585850067F269 /* ErrorMessage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9DB966CE2AD3002E0067F269 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		9DB966D02AD301850067F269 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DB966D52AD57B0B0067F269 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9DB966D82AD585850067F269 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		9D0AE44E2ACDE22000A31A9D /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				9DB966D72AD585770067F269 /* Utilities */,
 				9DB966D42AD57AFA0067F269 /* Managers */,
 				9DB966CD2AD300200067F269 /* Models */,
 				9D0AE4762AD2FAC700A31A9D /* CustomViews */,
@@ -146,6 +149,14 @@
 				9DB966D52AD57B0B0067F269 /* NetworkManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		9DB966D72AD585770067F269 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9DB966D82AD585850067F269 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				9D0AE4642ACEF0C700A31A9D /* SearchViewController.swift in Sources */,
 				9D0AE46E2AD2EA7200A31A9D /* GFTitleLabel.swift in Sources */,
 				9D0AE4522ACDE22000A31A9D /* SceneDelegate.swift in Sources */,
+				9DB966D92AD585850067F269 /* ErrorMessage.swift in Sources */,
 				9DB966D62AD57B0B0067F269 /* NetworkManager.swift in Sources */,
 				9D0AE46A2AD093AF00A31A9D /* GFTextField.swift in Sources */,
 				9D0AE4702AD2EBE500A31A9D /* GFBodyLabel.swift in Sources */,
