@@ -9,8 +9,13 @@ import UIKit
 
 class FollowerListViewController: UIViewController {
   
+  enum Section {
+    case main
+  }
+  
   var username: String!
   var collectionView: UICollectionView!
+  var dataSource: UICollectionViewDiffableDataSource<Section, Follower>!
   
   override func viewDidLoad() {
     super.viewDidLoad()
