@@ -22,6 +22,7 @@ class FollowerListViewController: UIViewController {
     configureViewController()
     configureCollectionView()
     getFollower()
+    configureDataSource()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -64,5 +65,13 @@ class FollowerListViewController: UIViewController {
         self.presentGFAlertOnMainThread(title: "Bad Stuff happened", message: error.rawValue, buttonTitle: "OK")
       }
     }
+  }
+  
+  func configureDataSource() {
+    dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell in
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.resuseID, for: indexPath) as! FollowerCell
+      cell.set(follower: follower)
+      return cell
+    })
   }
 }
