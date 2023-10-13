@@ -27,6 +27,7 @@
 		9DB966D92AD585850067F269 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966D82AD585850067F269 /* ErrorMessage.swift */; };
 		9DB966DC2AD6D5F60067F269 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966DB2AD6D5F60067F269 /* FollowerCell.swift */; };
 		9DB966DE2AD6D69A0067F269 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966DD2AD6D69A0067F269 /* GFAvatarImageView.swift */; };
+		9DB967002AD9CF3E0067F269 /* Helper Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966FF2AD9CF3E0067F269 /* Helper Code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9DB966D82AD585850067F269 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		9DB966DB2AD6D5F60067F269 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		9DB966DD2AD6D69A0067F269 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
+		9DB966FF2AD9CF3E0067F269 /* Helper Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Code.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				9DB966D82AD585850067F269 /* ErrorMessage.swift */,
+				9DB966FF2AD9CF3E0067F269 /* Helper Code.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				9D0AE4542ACDE22000A31A9D /* ViewController.swift in Sources */,
 				9D0AE4742AD2F57400A31A9D /* UIViewController+Ext.swift in Sources */,
 				9D0AE4662ACEF0FE00A31A9D /* FavoritesListViewController.swift in Sources */,
+				9DB967002AD9CF3E0067F269 /* Helper Code.swift in Sources */,
 				9D0AE4682AD0905400A31A9D /* GFButton.swift in Sources */,
 				9D0AE4502ACDE22000A31A9D /* AppDelegate.swift in Sources */,
 				9DB966D12AD301850067F269 /* User.swift in Sources */,
