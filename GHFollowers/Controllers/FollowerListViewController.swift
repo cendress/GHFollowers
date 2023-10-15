@@ -9,9 +9,7 @@ import UIKit
 
 class FollowerListViewController: UIViewController {
   
-  enum Section {
-    case main
-  }
+  enum Section { case main }
   
   var username: String!
   var followers: [Follower] = []
@@ -25,68 +23,80 @@ class FollowerListViewController: UIViewController {
     super.viewDidLoad()
     configureViewController()
     configureCollectionView()
-    getFollower(username: username, page: page)
+    getFollowers(username: username, page: page)
     configureDataSource()
   }
   
+  
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(false, animated: true)
   }
+  
   
   func configureViewController() {
     view.backgroundColor = .systemBackground
     navigationController?.navigationBar.prefersLargeTitles = true
   }
   
+  
   func configureCollectionView() {
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
     view.addSubview(collectionView)
+    collectionView.delegate = self
     collectionView.backgroundColor = .systemBackground
-    collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.resuseID)
+    collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
   }
   
-  func getFollower(username: String, page: Int) {
+  
+  func getFollowers(username: String, page: Int) {
+    showLoadingView()
     NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
       guard let self = self else { return }
+      self.dismissLoadingView()
       
       switch result {
       case .success(let followers):
         if followers.count < 100 { self.hasMoreFollowers = false }
-        self.followers = followers
+        self.followers.append(contentsOf: followers)
         self.updateData()
         
       case .failure(let error):
-        self.presentGFAlertOnMainThread(title: "Bad Stuff happened", message: error.rawValue, buttonTitle: "OK")
+        self.presentGFAlertOnMainThread(title: "Bad Stuff Happend", message: error.rawValue, buttonTitle: "Ok")
       }
     }
   }
   
+  
   func configureDataSource() {
-    dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell in
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.resuseID, for: indexPath) as! FollowerCell
+    dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCell.reuseID, for: indexPath) as! FollowerCell
       cell.set(follower: follower)
       return cell
     })
   }
   
+  
   func updateData() {
-    var snapShot = NSDiffableDataSourceSnapshot<Section, Follower>()
-    snapShot.appendSections([.main])
-    snapShot.appendItems(followers)
-    DispatchQueue.main.async { self.dataSource.apply(snapShot, animatingDifferences: true) }
+    var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
+    snapshot.appendSections([.main])
+    snapshot.appendItems(followers)
+    DispatchQueue.main.async { self.dataSource.apply(snapshot, animatingDifferences: true) }
   }
 }
 
+
 extension FollowerListViewController: UICollectionViewDelegate {
+  
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    let offSetY = scrollView.contentOffset.y
-    let contentHeight = scrollView.contentSize.height
-    let height = scrollView.frame.size.height
+    let offsetY         = scrollView.contentOffset.y
+    let contentHeight   = scrollView.contentSize.height
+    let height          = scrollView.frame.size.height
     
-    if offSetY > contentHeight - height {
+    if offsetY > contentHeight - height {
       guard hasMoreFollowers else { return }
       page += 1
-      getFollower(username: username, page: page)
+      getFollowers(username: username, page: page)
     }
   }
 }

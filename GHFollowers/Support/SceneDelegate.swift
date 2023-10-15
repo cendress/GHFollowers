@@ -16,8 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     guard let windowScene = (scene as? UIWindowScene) else { return }
     
-    let searchNavigationController = UINavigationController(rootViewController: SearchViewController())
-    let favoritesNavigationController = UINavigationController(rootViewController: FavoritesListViewController())
+    _ = UINavigationController(rootViewController: SearchViewController())
+    _ = UINavigationController(rootViewController: FavoritesListViewController())
     
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.windowScene = windowScene
