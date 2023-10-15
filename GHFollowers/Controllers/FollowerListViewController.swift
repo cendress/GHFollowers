@@ -25,6 +25,7 @@ class FollowerListViewController: UIViewController {
     configureCollectionView()
     getFollowers(username: username, page: page)
     configureDataSource()
+    configureSearchController()
   }
   
   
@@ -75,6 +76,12 @@ class FollowerListViewController: UIViewController {
     }
   }
   
+  func configureSearchController() {
+    let searchController = UISearchController()
+    searchController.searchResultsUpdater = self
+    searchController.searchBar.placeholder = "Search for a username"
+    navigationItem.searchController = searchController
+  }
   
   func configureDataSource() {
     dataSource = UICollectionViewDiffableDataSource<Section, Follower>(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
@@ -106,5 +113,11 @@ extension FollowerListViewController: UICollectionViewDelegate {
       page += 1
       getFollowers(username: username, page: page)
     }
+  }
+}
+
+extension FollowerListViewController: UISearchResultsUpdating {
+  func updateSearchResults(for searchController: UISearchController) {
+    guard let filter = searchController.searchBar.text, !filter.isEmpty else { return }
   }
 }
