@@ -28,6 +28,7 @@
 		9DB966DE2AD6D69A0067F269 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966DD2AD6D69A0067F269 /* GFAvatarImageView.swift */; };
 		9DB967002AD9CF3E0067F269 /* Helper Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB966FF2AD9CF3E0067F269 /* Helper Code.swift */; };
 		9DB967082ADC40FC0067F269 /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967072ADC40FC0067F269 /* GFEmptyStateView.swift */; };
+		9DB967542ADDC7EB0067F269 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967532ADDC7EB0067F269 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		9DB966DD2AD6D69A0067F269 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		9DB966FF2AD9CF3E0067F269 /* Helper Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helper Code.swift"; sourceTree = "<group>"; };
 		9DB967072ADC40FC0067F269 /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
+		9DB967532ADDC7EB0067F269 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				9D0AE4632ACEF0C700A31A9D /* SearchViewController.swift */,
 				9D0AE46B2AD2083300A31A9D /* FollowerListViewController.swift */,
 				9D0AE4652ACEF0FE00A31A9D /* FavoritesListViewController.swift */,
+				9DB967532ADDC7EB0067F269 /* UserInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				9DB967082ADC40FC0067F269 /* GFEmptyStateView.swift in Sources */,
 				9DB966D92AD585850067F269 /* ErrorMessage.swift in Sources */,
 				9DB966D62AD57B0B0067F269 /* NetworkManager.swift in Sources */,
+				9DB967542ADDC7EB0067F269 /* UserInfoViewController.swift in Sources */,
 				9D0AE46A2AD093AF00A31A9D /* GFTextField.swift in Sources */,
 				9D0AE4702AD2EBE500A31A9D /* GFBodyLabel.swift in Sources */,
 			);
