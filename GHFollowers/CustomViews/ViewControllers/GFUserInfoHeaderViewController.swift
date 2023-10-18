@@ -31,6 +31,7 @@ class GFUserInfoHeaderViewController: UIViewController {
     super.viewDidLoad()
     addSubviews()
     layoutUI()
+    configureUIElements()
   }
   
   func configureUIElements() {
@@ -42,6 +43,7 @@ class GFUserInfoHeaderViewController: UIViewController {
     bioLabel.numberOfLines = 3
     
     locationImageView.image = UIImage(systemName: SFSymbols.location)
+    locationImageView.tintColor = .secondaryLabel
   }
   
   func addSubviews() {
