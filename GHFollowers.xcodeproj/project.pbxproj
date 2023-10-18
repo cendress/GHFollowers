@@ -31,6 +31,7 @@
 		9DB967562ADDCFFF0067F269 /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967552ADDCFFF0067F269 /* GFError.swift */; };
 		9DB9675E2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9675D2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift */; };
 		9DB967602AE01EAA0067F269 /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9675F2AE01EAA0067F269 /* GFSecondaryTitleLabel.swift */; };
+		9DB967622AE0259A0067F269 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967612AE0259A0067F269 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		9DB967552ADDCFFF0067F269 /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
 		9DB9675D2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderViewController.swift; sourceTree = "<group>"; };
 		9DB9675F2AE01EAA0067F269 /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		9DB967612AE0259A0067F269 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 			children = (
 				9DB966FF2AD9CF3E0067F269 /* Helper Code.swift */,
 				9DB967552ADDCFFF0067F269 /* GFError.swift */,
+				9DB967612AE0259A0067F269 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				9DB967002AD9CF3E0067F269 /* Helper Code.swift in Sources */,
 				9D0AE4682AD0905400A31A9D /* GFButton.swift in Sources */,
 				9D0AE4502ACDE22000A31A9D /* AppDelegate.swift in Sources */,
+				9DB967622AE0259A0067F269 /* Constants.swift in Sources */,
 				9DB966D12AD301850067F269 /* User.swift in Sources */,
 				9DB966DC2AD6D5F60067F269 /* FollowerCell.swift in Sources */,
 				9DB9675E2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift in Sources */,
