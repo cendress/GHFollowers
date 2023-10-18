@@ -32,6 +32,7 @@
 		9DB9675E2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9675D2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift */; };
 		9DB967602AE01EAA0067F269 /* GFSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9675F2AE01EAA0067F269 /* GFSecondaryTitleLabel.swift */; };
 		9DB967622AE0259A0067F269 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967612AE0259A0067F269 /* Constants.swift */; };
+		9DB967642AE03D3C0067F269 /* GFItemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967632AE03D3C0067F269 /* GFItemInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		9DB9675D2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFUserInfoHeaderViewController.swift; sourceTree = "<group>"; };
 		9DB9675F2AE01EAA0067F269 /* GFSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		9DB967612AE0259A0067F269 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9DB967632AE03D3C0067F269 /* GFItemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9DB967072ADC40FC0067F269 /* GFEmptyStateView.swift */,
+				9DB967632AE03D3C0067F269 /* GFItemInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				9DB966D12AD301850067F269 /* User.swift in Sources */,
 				9DB966DC2AD6D5F60067F269 /* FollowerCell.swift in Sources */,
 				9DB9675E2AE01D7A0067F269 /* GFUserInfoHeaderViewController.swift in Sources */,
+				9DB967642AE03D3C0067F269 /* GFItemInfoView.swift in Sources */,
 				9DB966DE2AD6D69A0067F269 /* GFAvatarImageView.swift in Sources */,
 				9D0AE4722AD2EDD700A31A9D /* GFAlertViewController.swift in Sources */,
 				9DB966CF2AD3002E0067F269 /* Follower.swift in Sources */,
