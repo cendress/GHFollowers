@@ -8,8 +8,8 @@
 import UIKit
 
 protocol UserInfoVCDelegate: class {
-  func didTapGitHubProfile()
-  func didTapGetFollowers()
+  func didTapGitHubProfile(for user: User)
+  func didTapGetFollowers(for user: User)
 }
 
 class UserInfoViewController: UIViewController {
@@ -21,6 +21,7 @@ class UserInfoViewController: UIViewController {
   let dateLabel = GFBodyLabel(textAlignment: .center)
   
   var username: String!
+  weak var delegate: FollowerListVCDelegate!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -55,9 +56,10 @@ class UserInfoViewController: UIViewController {
     repoItemVC.delegate = self
     
     let followerItemsVC = GFFollowerItemViewController(user: user)
+    followerItemsVC.delegate = self
     
-    self.add(childVC: GFRepoItemViewController(user: user), to: self.itemViewOne)
-    self.add(childVC: GFFollowerItemViewController(user: user), to: self.itemViewTwo)
+    self.add(childVC: repoItemVC, to: self.itemViewOne)
+    self.add(childVC: followerItemsVC, to: self.itemViewTwo)
     self.add(childVC: GFUserInfoHeaderViewController(user: user), to: self.headerView)
     self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
   }
@@ -106,13 +108,21 @@ class UserInfoViewController: UIViewController {
 
 extension UserInfoViewController: UserInfoVCDelegate {
   
-  func didTapGitHubProfile() {
-    //show safari view controller
+  func didTapGitHubProfile(for user: User) {
+    guard let url = URL(string: user.htmlUrl) else {
+      presentGFAlertOnMainThread(title: "Invalid URL", message: "The url attached to this user is invalid.", buttonTitle: "OK")
+      return
+    }
+    
+    presentSafariVC(with: url)
   }
   
-  func didTapGetFollowers() {
-    //show users followers
+  func didTapGetFollowers(for user: User) {
+    guard user.followers != 0 else {
+      presentGFAlertOnMainThread(title: "No Followers", message: "This user has no followers.", buttonTitle: "So sad")
+      return
+    }
+    delegate.didRequestFollowers(for: user.login)
+    dismissVC()
   }
-  
-  
 }
