@@ -36,6 +36,8 @@
 		9DB967862AE16E360067F269 /* GFItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967852AE16E360067F269 /* GFItemInfoViewController.swift */; };
 		9DB9678A2AE1724E0067F269 /* GFRepoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB967892AE1724E0067F269 /* GFRepoItemViewController.swift */; };
 		9DB9678C2AE174860067F269 /* GFFollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9678B2AE174860067F269 /* GFFollowerItemViewController.swift */; };
+		9DB9678E2AE3009D0067F269 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9678D2AE3009D0067F269 /* Date+Ext.swift */; };
+		9DB967902AE301070067F269 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9678F2AE301070067F269 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		9DB967852AE16E360067F269 /* GFItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFItemInfoViewController.swift; sourceTree = "<group>"; };
 		9DB967892AE1724E0067F269 /* GFRepoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemViewController.swift; sourceTree = "<group>"; };
 		9DB9678B2AE174860067F269 /* GFFollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemViewController.swift; sourceTree = "<group>"; };
+		9DB9678D2AE3009D0067F269 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		9DB9678F2AE301070067F269 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				9D0AE4732AD2F57400A31A9D /* UIViewController+Ext.swift */,
+				9DB9678D2AE3009D0067F269 /* Date+Ext.swift */,
+				9DB9678F2AE301070067F269 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				9D0AE46C2AD2083300A31A9D /* FollowerListViewController.swift in Sources */,
 				9D0AE4742AD2F57400A31A9D /* UIViewController+Ext.swift in Sources */,
 				9D0AE4662ACEF0FE00A31A9D /* FavoritesListViewController.swift in Sources */,
+				9DB967902AE301070067F269 /* String+Ext.swift in Sources */,
 				9DB967002AD9CF3E0067F269 /* Helper Code.swift in Sources */,
 				9D0AE4682AD0905400A31A9D /* GFButton.swift in Sources */,
 				9D0AE4502ACDE22000A31A9D /* AppDelegate.swift in Sources */,
@@ -337,6 +344,7 @@
 				9DB967562ADDCFFF0067F269 /* GFError.swift in Sources */,
 				9D0AE4642ACEF0C700A31A9D /* SearchViewController.swift in Sources */,
 				9D0AE46E2AD2EA7200A31A9D /* GFTitleLabel.swift in Sources */,
+				9DB9678E2AE3009D0067F269 /* Date+Ext.swift in Sources */,
 				9DB967602AE01EAA0067F269 /* GFSecondaryTitleLabel.swift in Sources */,
 				9D0AE4522ACDE22000A31A9D /* SceneDelegate.swift in Sources */,
 				9DB967082ADC40FC0067F269 /* GFEmptyStateView.swift in Sources */,
