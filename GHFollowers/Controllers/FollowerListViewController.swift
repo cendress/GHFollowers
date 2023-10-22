@@ -110,7 +110,7 @@ class FollowerListViewController: UIViewController {
   }
   
   @objc func addButtonTapped() {
-    
+    print("Add button tapped")
   }
 }
 
