@@ -24,16 +24,33 @@ class FavoritesListViewController: UIViewController {
   }
   
   func configureTableView() {
+    view.addSubview(tableView)
+    
+    tableView.frame = view.bounds
+    tableView.rowHeight = 80
     tableView.delegate = self
     tableView.dataSource = self
     
+    tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseID)
   }
   
   func getFavorites() {
-    PersistenceManager.retrieveFavorites { result in
+    PersistenceManager.retrieveFavorites { [weak self] result in
+      guard let self = self else { return }
+      
       switch result {
       case .success(let favorites):
-        self.favorites = favorites
+        
+        if favorites.isEmpty {
+          self.showEmptyStateView(with: "No Favorites?\nAdd one on the follower screen.", in: self.view)
+        } else {
+          self.favorites = favorites
+          DispatchQueue.main.async {
+            self.tableView.reloadData()
+            self.view.bringSubviewToFront(self.tableView)
+          }
+        }
+        
       case .failure(let error):
         break
       }
