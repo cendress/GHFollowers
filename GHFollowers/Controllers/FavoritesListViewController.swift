@@ -17,6 +17,11 @@ class FavoritesListViewController: UIViewController {
     configureViewController()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    getFavorites()
+  }
+  
   func configureViewController() {
     view.backgroundColor = .systemBackground
     title = "Favorites"
@@ -52,7 +57,7 @@ class FavoritesListViewController: UIViewController {
         }
         
       case .failure(let error):
-        break
+        self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
       }
     }
   }
@@ -69,5 +74,14 @@ extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegat
     let favorite = favorites[indexPath.row]
     cell.set(favorite: favorite)
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let favorite = favorites[indexPath.row]
+    let destVC = FollowerListViewController()
+    destVC.username = favorite.login
+    destVC.title = favorite.login
+    
+    navigationController?.pushViewController(destVC, animated: true)
   }
 }
