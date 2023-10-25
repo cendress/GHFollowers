@@ -8,8 +8,7 @@
 import UIKit
 
 protocol UserInfoVCDelegate: class {
-  func didTapGitHubProfile(for user: User)
-  func didTapGetFollowers(for user: User)
+  func didRequestFollowers(for username: String)
 }
 
 class UserInfoViewController: GFDataLoadingViewController {
@@ -21,7 +20,7 @@ class UserInfoViewController: GFDataLoadingViewController {
   let dateLabel = GFBodyLabel(textAlignment: .center)
   
   var username: String!
-  weak var delegate: FollowerListVCDelegate!
+  weak var delegate: UserInfoVCDelegate!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,7 +42,7 @@ class UserInfoViewController: GFDataLoadingViewController {
       switch result {
       case .success(let user):
         DispatchQueue.main.async {
-        self.configureUIElements(with: user)
+          self.configureUIElements(with: user)
         }
       case .failure(let error):
         self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "OK")
@@ -81,7 +80,7 @@ class UserInfoViewController: GFDataLoadingViewController {
     
     NSLayoutConstraint.activate([
       headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-      headerView.heightAnchor.constraint(equalToConstant: 180),
+      headerView.heightAnchor.constraint(equalToConstant: 210),
       
       itemViewOne.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: padding),
       itemViewOne.heightAnchor.constraint(equalToConstant: itemHeight),
@@ -90,7 +89,7 @@ class UserInfoViewController: GFDataLoadingViewController {
       itemViewTwo.heightAnchor.constraint(equalToConstant: itemHeight),
       
       dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: padding),
-      dateLabel.heightAnchor.constraint(equalToConstant: 18)
+      dateLabel.heightAnchor.constraint(equalToConstant: 50)
     ])
   }
   
@@ -106,7 +105,7 @@ class UserInfoViewController: GFDataLoadingViewController {
   }
 }
 
-extension UserInfoViewController: UserInfoVCDelegate {
+extension UserInfoViewController: GFRepoItemVCDelegate {
   
   func didTapGitHubProfile(for user: User) {
     guard let url = URL(string: user.htmlUrl) else {
@@ -116,6 +115,9 @@ extension UserInfoViewController: UserInfoVCDelegate {
     
     presentSafariVC(with: url)
   }
+}
+
+extension UserInfoViewController: GFFollowerItemVCDelegate {
   
   func didTapGetFollowers(for user: User) {
     guard user.followers != 0 else {
