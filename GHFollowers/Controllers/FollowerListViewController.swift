@@ -109,7 +109,6 @@ class FollowerListViewController: GFDataLoadingViewController {
     })
   }
   
-  
   func updateData(on followers: [Follower]) {
     var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
     snapshot.appendSections([.main])
