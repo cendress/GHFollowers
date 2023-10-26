@@ -75,5 +75,4 @@ class GFItemInfoViewController: UIViewController {
       actionButton.heightAnchor.constraint(equalToConstant: 44)
     ])
   }
-  
 }
