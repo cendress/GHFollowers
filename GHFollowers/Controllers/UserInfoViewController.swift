@@ -52,6 +52,12 @@ class UserInfoViewController: GFDataLoadingViewController {
   }
   
   func getUserInfo() {
+    
+    Task {
+      do {
+        let user = try await NetworkManager.shared.getUserInfo(for: username)
+      }
+    }
     NetworkManager.shared.getUserInfo(for: username) { [weak self] result in
       guard let self = self else { return }
       
