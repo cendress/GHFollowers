@@ -20,6 +20,7 @@ struct FollowerView: View {
       } placeholder: {
         Image("avatar-placeholder")
       }
+      .clipShape(Circle())
       
       Text(follower.login)
         .bold()
