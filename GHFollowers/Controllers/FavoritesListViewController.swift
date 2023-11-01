@@ -89,13 +89,14 @@ extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegat
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     guard editingStyle == .delete else { return }
     
-    let favorite = favorites[indexPath.row]
-    
-    PersistenceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] error in
+    PersistenceManager.updateWith(favorite: favorites[indexPath.row], actionType: .remove) { [weak self] error in
       guard let self = self else { return }
       guard let error = error else {
         self.favorites.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .left)
+        if self.favorites.isEmpty {
+          self.showEmptyStateView(with: "No favorites?\nAdd one on the follower screen.", in: self.view)
+        }
         return
       }
       
