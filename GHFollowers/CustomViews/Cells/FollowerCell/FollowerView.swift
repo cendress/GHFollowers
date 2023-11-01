@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct FollowerView: View {
+  
+  var follower: Follower
+  
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    VStack {
+      AsyncImage(url: URL(string: follower.avatarUrl)) { image in
+        image
+          .resizable()
+          .aspectRatio(contentMode: .fit)
+      } placeholder: {
+        Image("avatar-placeholder")
+      }
+    }
   }
 }
 
 #Preview {
-  FollowerView()
+  FollowerView(follower: Follower(login: "SeanAllen", avatarUrl: ""))
 }
