@@ -20,6 +20,11 @@ struct FollowerView: View {
       } placeholder: {
         Image("avatar-placeholder")
       }
+      
+      Text(follower.login)
+        .bold()
+        .lineLimit(1)
+        .minimumScaleFactor(0.6)
     }
   }
 }
