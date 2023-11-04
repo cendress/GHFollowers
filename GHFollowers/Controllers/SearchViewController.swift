@@ -93,3 +93,7 @@ extension SearchViewController: UITextFieldDelegate {
     return true
   }
 }
+
+#Preview {
+  return SearchViewController()
+}
