@@ -74,6 +74,9 @@ class FollowerListViewController: GFDataLoadingViewController {
     collectionView.delegate = self
     collectionView.backgroundColor = .systemBackground
     collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+    
+    collectionView.isAccessibilityElement = true
+    collectionView.accessibilityLabel = "Followers List"
   }
   
   func configureSearchController() {
