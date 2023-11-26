@@ -72,11 +72,28 @@ class FollowerListViewController: GFDataLoadingViewController {
     collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
     view.addSubview(collectionView)
     collectionView.delegate = self
-    collectionView.backgroundColor = .systemBackground
     collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.reuseID)
+    
+    configureGradientBackground()
     
     collectionView.isAccessibilityElement = true
     collectionView.accessibilityLabel = "Followers List"
+  }
+  
+  func configureGradientBackground() {
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.colors = [UIColor.systemGreen.cgColor, UIColor.systemBackground.cgColor]
+    gradientLayer.frame = collectionView.bounds
+    
+    collectionView.backgroundView = UIView(frame: collectionView.bounds)
+    collectionView.backgroundView?.layer.insertSublayer(gradientLayer, at: 0)
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    if let gradientLayer = collectionView.backgroundView?.layer.sublayers?.first as? CAGradientLayer {
+      gradientLayer.frame = collectionView.bounds
+    }
   }
   
   func configureSearchController() {
